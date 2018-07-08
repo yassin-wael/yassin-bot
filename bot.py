@@ -24,4 +24,4 @@ async def on_message(message):
         await client.send_message(message.channel, "<@%s> hi" % (userID))   
           
 
-client.run("NDUzOTcyODEyMDU5OTAxOTU0.Dfmq-w.ZTZom6PuyZtyTtXJXpLGRRH2PXw")
+client.run("NDUzOTcyODEyMDU5OTAxOTU0.DiPoug.qdnUKksJfrTyGTrxdJxEGy0bvC0")
