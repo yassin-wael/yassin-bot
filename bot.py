@@ -12,9 +12,7 @@ async def on_ready():
     print("bot is ready")
 
 @client.event
-async def  on_message(message):
-    if message.content == "cookie":
-        await client.send_message(message.channel, ":cookie:")
+  await client.change_presence(game=discord.Game(name="24/7"))
 
 @client.event
 async def on_message(message):
