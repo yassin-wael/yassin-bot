@@ -19,7 +19,9 @@ async def on_message(message):
         await client.send_message(message.channel,"<@%s> pong!" % (userID))
     if message.content.startswith('hey'):
         userID = message.author.id
-        await client.send_message(message.channel, "<@%s> hi" % (userID))  
+        await client.send_message(message.channel, "<@%s> hi" % (userID)) 
+     
+@client.event    
 
 async def on_message(message):
     if message.content.startswith('!test'):
@@ -32,4 +34,4 @@ async def on_message(message):
 
           
 
-client.run("NDUzOTcyODEyMDU5OTAxOTU0.DiPoug.qdnUKksJfrTyGTrxdJxEGy0bvC0")
+client.run("NNDY2MzM3Njc4OTk3MTkyNzA5.Diamqg.XiShFyNwTLeAofp8ALDFGjR-N9Y")
