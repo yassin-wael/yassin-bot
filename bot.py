@@ -1,28 +1,25 @@
 import discord
-from discord.ext.commands import Bot
-from discord.ext import commands
 import asyncio
-import time
 
 client = discord.Client()
-client = commands.Bot(command_prefix = "!")
 
 @client.event
-async def on_ready(): 
-    print("bot is ready")
+async def on_ready():
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('------')
     await client.change_presence(game=discord.Game(name="24/7"))
-    
-@client.event
-async def on_message(message):
-    if message.content.startswith('!ping'):
-        userID = message.author.id
-        await client.send_message(message.channel,"<@%s> pong!" % (userID))
-    if message.content.startswith('hey'):
-        userID = message.author.id
-        await client.send_message(message.channel, "<@%s> hi" % (userID)) 
-     
-@client.event    
 
+
+@client.event
+async def on_member_join(member):
+    print("recognised that a member called " + member.name + " joined")
+    await client.send_message(member, "welcome to the server! we hope you will enjoy your stay :heart:")
+    print("send message to " + member.name)
+    
+@client.event    
+    
 async def on_message(message):
     if message.content.startswith('!test'):
         counter = 0
@@ -30,8 +27,14 @@ async def on_message(message):
         async for log in client.logs_from(message.channel, limit=100):
             if log.author == message.author:
                 counter += 1
-        
 
-          
+        await client.edit_message(tmp, 'You have {} messages.'.format(counter))
+    elif message.content.startswith('!sleep'):
+        await asyncio.sleep(5)
+        await client.send_message(message.channel, 'Done sleeping')
 
-client.run("NNDY2MzM3Njc4OTk3MTkyNzA5.Diamqg.XiShFyNwTLeAofp8ALDFGjR-N9Y")
+client.run("NDY2MzM3Njc4OTk3MTkyNzA5.Dia5Kw.xAMbL2cVnxtlAj9sM9wYM_OkUjw")
+
+
+
+
