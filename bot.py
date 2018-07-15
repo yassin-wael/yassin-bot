@@ -9,7 +9,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
-    await client.change_presence(game=discord.Game(name="24/7"))
+    await client.change_presence(game=discord.Game(name="Nixon videos"))
 
 
 @client.event
@@ -33,7 +33,7 @@ async def on_message(message):
         await asyncio.sleep(5)
         await client.send_message(message.channel, 'Done sleeping')
 
-client.run("NDY2MzM3Njc4OTk3MTkyNzA5.Dia5Kw.xAMbL2cVnxtlAj9sM9wYM_OkUjw")
+client.run("NDY4MTU0NDczNDY3MDg0ODAx.Di1DMA.1FDuynhd_3yjjMoggfcrGOl2wY8")
 
 
 
